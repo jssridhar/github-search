@@ -2,17 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { useRouter } from 'next/router';
 import UsersList from '../../components/user-list';
 import ReposList from '../../components/repos-list';
+import Loader from '../../components/loader';
 import {
     getUser
 } from '../../slices/user';
 import theme from '../../theme';
 
 const User = ({ userStore }) => {
-    const router = useRouter();
-    const { user, followers, following, repos } = userStore;
+    const { user, followers, following, repos, loading, error } = userStore;
+
+    if (loading) {
+        return (
+            <div className='container'>
+                <Loader />
+            </div>
+        );
+    } else if (error) {
+        return (
+            <div className='container'>
+                <div className='err-msg'>{error}</div>
+                <style jsx>{`
+                    .err-msg {
+                        color: ${theme.colors.danger};
+                        font-size: ${theme.fontSizes[2]}px;
+                    }
+                `}</style>
+            </div>
+        );
+    }
 
     return (
         <>
@@ -53,6 +72,7 @@ const User = ({ userStore }) => {
 
 User.getInitialProps = async ({ store, isServer, query }) => {
     const { username } = query;
+    console.log('Is Server', isServer);
     if (username) {
         await store.dispatch(getUser({ username }));
     }

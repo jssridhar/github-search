@@ -7,7 +7,7 @@ const UserCard = ({ user }) => {
         <>
             <li className='user-card'>
                 <img src={user.avatar_url} className='user-card--avatar'/>
-                <Link href={`/user/${user.login}`}>
+                <Link href={`/user/[username]`} as={`/user/${user.login}`}>
                     <span className='user-card--name'>{user.login}</span>
                 </Link>
             </li>

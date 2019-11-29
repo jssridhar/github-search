@@ -25,8 +25,11 @@ const userSlice = createSlice({
             state.repos = repos;
         },
         getUserFailure: (state, { payload }) => {
-            const { error } = payload;
-            state.error = error;
+            state.error = payload;
+            state.user = {};
+            state.followers = [];
+            state.following = [];
+            state.repos = [];
             state.loading = false;
         }
     }
@@ -45,7 +48,13 @@ export const getUser = ({ username }) => (dispatch) => {
     ]).then(responseArray => {
         dispatch(getUserSuccess(responseArray.map(res => res.body)));
     })
-    .catch(error => dispatch(getUserFailure(error)));
+    .catch(error => {
+        if (error.response && error.response.body && error.response.body.message) {
+            dispatch(getUserFailure(error.response.body.message));
+        } else {
+            dispatch(getUserFailure('Something unexpected happened!'));
+        }
+    });
 };
 
 export default reducer;
