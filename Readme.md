@@ -41,10 +41,12 @@ After the search is completed, the application shows the list of users along wit
 * [x] The application style is built by one of the CSS preprocessors or CSS-in-JS. `styled jsx`
 * [x] The application has to be responsive and optimised for mobile
 * [x] A documentation on how the application works and how to set up and build the project is * [] provided
-* [ ] The application is production ready (HINT: try Google’s PageSpeed or Lighthouse)
+* [x] The application is production ready (HINT: try Google’s PageSpeed or Lighthouse) 
+    * [Pagespeed Results #1](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fgithubsearch.jssridhar.now.sh%2F&tab=mobile)
+    * [Pagespeed Result #2]()
 ### Bonus points
 * [ ] The application is deployed on AWS instead of Heroku or Now
-* [ ] The application supports IE10 and/or Android native browser (Chrome 30.0)
+* [ ] The application supports IE10 and/or Android native browser (Chrome 30.0) `Note: Consciously tried to have maximum browser support. Couldn't test on these browsers `
 * [x] The pages are server-side rendered and are cached in the server
 * [x] All pages' URL is reusable - meaning it can be copied and pasted on different browser and still shows the same result
 * [x] All pages are SEO optimised `Note: SEO should be easier since all pages are server rendered if necessary`
