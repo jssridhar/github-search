@@ -42,8 +42,8 @@ After the search is completed, the application shows the list of users along wit
 * [x] The application has to be responsive and optimised for mobile
 * [x] A documentation on how the application works and how to set up and build the project is * [] provided
 * [x] The application is production ready (HINT: try Google’s PageSpeed or Lighthouse) 
-    * [Pagespeed Results #1](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fgithubsearch.jssridhar.now.sh%2F&tab=mobile)
-    * [Pagespeed Result #2]()
+    * [Pagespeed Results #1](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fgithub-search-kohl-one.now.sh%2F&tab=desktop)
+    * [Pagespeed Results #2](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fgithub-search-kohl-one.now.sh%2Fuser%2Fjssridhar&tab=desktop)
 ### Bonus points
 * [ ] The application is deployed on AWS instead of Heroku or Now
 * [ ] The application supports IE10 and/or Android native browser (Chrome 30.0) `Note: Consciously tried to have maximum browser support. Couldn't test on these browsers `
