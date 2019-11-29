@@ -32,7 +32,7 @@ const Layout = ({ children, title = 'Github Search' }) => (
         </Head>
         <header className='page-header'>
             <Link href='/'>
-                <img src='/images/Github-Mark-Light-32px.png' className='page-logo' />
+                <img src='/images/logo_light.png' className='page-logo' />
             </Link>
             <h1 className='page-title'>Github user search</h1>
         </header>

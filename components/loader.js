@@ -3,7 +3,7 @@ import theme from '../theme';
 
 const Loader = ({ className = '', ...rest}) => (
     <>
-        <img src='./images/Github-Mark-32px.png' className='css-loader'/>
+        <img src='/images/logo.png' className='css-loader'/>
         <style jsx>{`
             .css-loader {
                 width: ${theme.heights[3]}px;

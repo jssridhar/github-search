@@ -4,7 +4,7 @@ Yarn version: 1.17.3
 
 ### Deployment
 
-Deployed it using [now](https://github.com/zeit/now).
+Deployed it using [now](https://github.com/zeit/now). Github repo is linked for auto deploy, whenever a new change is pushed to master.
 
 Current production version can be accessed [here](https://github-search-kohl-one.now.sh/)
 
