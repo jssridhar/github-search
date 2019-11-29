@@ -39,7 +39,7 @@ const User = ({ userStore }) => {
                 <div className='row'>
                     <div className='col-xs-11 col-md-8 col-xl-6'>
                         <h2>User payload:</h2>
-                        <pre>{JSON.stringify(user, null, "\t")}</pre>
+                        <code className='user-payload'>{JSON.stringify(user, null, "\t")}</code>
                     </div>
                 </div>
                 <div className='row'>
@@ -62,6 +62,11 @@ const User = ({ userStore }) => {
                 </div>
             </div>
             <style jsx>{`
+                .user-payload {
+                    white-space: pre-wrap;
+                    word-wrap: break-wrod;
+                    text-align: justify;
+                }
                 .user-view {
                     margin-bottom: ${theme.space[4]}px;
                 }

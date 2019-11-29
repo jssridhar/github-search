@@ -24,7 +24,7 @@ const UserCard = ({ user }) => {
                     margin-left: ${theme.space[2]}px;
                 }
                 .user-card--avatar {
-                    height: ${theme.heights[3]}px;
+                    height: 70vh;
                     width: auto;
                     border-radius: 50%;
                 }
