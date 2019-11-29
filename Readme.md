@@ -6,7 +6,7 @@ Yarn version: 1.17.3
 
 Deployed it using [now](https://github.com/zeit/now).
 
-Current production version can be accessed [here](https://githubsearch.jssridhar.now.sh/)
+Current production version can be accessed [here](https://github-search-kohl-one.now.sh/)
 
 
 ## Libraries Used
