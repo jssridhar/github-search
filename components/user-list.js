@@ -24,8 +24,8 @@ const UserCard = ({ user }) => {
                     margin-left: ${theme.space[2]}px;
                 }
                 .user-card--avatar {
-                    height: 70vh;
-                    width: auto;
+                    height: ${theme.heights[2]}px;
+                    width: ${theme.heights[2]}px;
                     border-radius: 50%;
                 }
             `}</style>
@@ -51,7 +51,7 @@ const UsersList = ({ users }) => {
                 .users-list {
                     margin: 0;
                     padding: 0;
-                    max-height: 400px;
+                    max-height: 70vh;
                     overflow: auto;
                     list-style: none;
                     padding: 0 ${theme.space[2]}px;

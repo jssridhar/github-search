@@ -10,6 +10,8 @@
 * [Next Redux Wrapper](https://github.com/kirill-konshin/next-redux-wrapper)
 * [Superagent](https://github.com/visionmedia/superagent) - Library for ajax requests with a very good browser support.
 
+Redux thunk middleware is used for async actions. Thunk is included as part of redux toolkit.
+
 
 ### Commands
 
@@ -32,3 +34,4 @@
 The application has two pages
 * index - Search page with an input box to search for github users by login name. Results are shown below 
 * user/[username] - User view with parsed json payload, followers, following and repositories
+
