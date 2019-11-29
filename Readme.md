@@ -52,15 +52,15 @@ After the search is completed, the application shows the list of users along wit
 * [x] The application style is built by one of the CSS preprocessors or CSS-in-JS. `styled jsx`
 * [x] The application has to be responsive and optimised for mobile
 * [x] A documentation on how the application works and how to set up and build the project is * [] provided
-* [] The application is production ready (HINT: try Google’s PageSpeed or Lighthouse)
+* [ ] The application is production ready (HINT: try Google’s PageSpeed or Lighthouse)
 ### Bonus points
-* [] The application is deployed on AWS instead of Heroku or Now
-* [] The application supports IE10 and/or Android native browser (Chrome 30.0)
+* [ ] The application is deployed on AWS instead of Heroku or Now
+* [ ] The application supports IE10 and/or Android native browser (Chrome 30.0)
 * [x] The pages are server-side rendered and are cached in the server
 * [x] All pages' URL is reusable - meaning it can be copied and pasted on different browser and still shows the same result
-* [] All pages are SEO optimised `Note: SEO should be easier since all pages are server rendered if necessary`
+* [x] All pages are SEO optimised `Note: SEO should be easier since all pages are server rendered if necessary`
 * [x] The project supports code splitting for each pages
-* [] The results list also asynchronous-ly shows the number of followers and following of each user without going the user page
-* [] The search input does the searching as you type (See google search as an example)
-* [] There is animated transition between pages
+* [ ] The results list also asynchronous-ly shows the number of followers and following of each user without going the user page
+* [ ] The search input does the searching as you type (See google search as an example)
+* [ ] There is animated transition between pages
 * [x] The application supports theming and can easily be switched between themes
