@@ -11,18 +11,49 @@ import {
 } from '../../slices/user';
 import theme from '../../theme';
 
+const UsersPayload = ({ user }) => (
+    <>
+        <div className='row'>
+            <div className='col-xs-11'>
+                <div className='user-payload-container'>
+                    <h2>User payload:</h2>
+                    <code className='user-payload'>{JSON.stringify(user, null, "\t")}</code>
+                </div>
+            </div>
+        </div>
+        <style jsx>{`
+            .user-payload-container {
+                padding: 0 ${theme.space[2]}px;
+            }            
+            .user-payload {
+                white-space: pre-wrap;
+                word-break: break-all;
+                text-align: justify;
+            }
+        `}</style>
+    </>
+);
+
+const UserSection = ({ title, Component, componentProps }) => (
+    <div className='row'>
+        <div className='col-xs-11 col-md-8 col-xl-6'>
+            <h2>{title}</h2>
+            <Component {...componentProps} />
+        </div>
+    </div>
+);
+
 const User = ({ userStore }) => {
     const { user, followers, following, repos, loading, error } = userStore;
 
+    let content;
     if (loading) {
-        return (
-            <div className='container'>
-                <Loader />
-            </div>
+        content = (
+            <Loader />
         );
     } else if (error) {
-        return (
-            <div className='container'>
+        content = (
+            <>
                 <div className='err-msg'>{error}</div>
                 <style jsx>{`
                     .err-msg {
@@ -30,51 +61,45 @@ const User = ({ userStore }) => {
                         font-size: ${theme.fontSizes[2]}px;
                     }
                 `}</style>
-            </div>
+            </>
+        );
+    } else {
+        content = (
+            <>
+                <UsersPayload user={user} />
+                <UserSection
+                    title={`Followers (${followers.length}):`}
+                    Component={UsersList}
+                    componentProps={{
+                        users: followers
+                    }}
+                />
+                <UserSection
+                    title={`Following (${following.length}):`}
+                    Component={UsersList}
+                    componentProps={{
+                        users: following
+                    }}
+                />
+                <UserSection
+                    title={`Repositories (${repos.length}):`}
+                    Component={ReposList}
+                    componentProps={{
+                        repos
+                    }}
+                />
+            </>
         );
     }
 
     return (
         <Layout title={user.login ? `github user - ${user.login}` : undefined}>
             <div className='container user-view'>
-                <div className='row'>
-                    <div className='col-xs-11'>
-                        <div className='user-payload-container'>
-                            <h2>User payload:</h2>
-                            <code className='user-payload'>{JSON.stringify(user, null, "\t")}</code>
-                        </div>
-                    </div>
-                </div>
-                <div className='row'>
-                    <div className='col-xs-11 col-md-8 col-xl-6'>
-                        <h2>Followers: ({followers.length})</h2>
-                        <UsersList users={followers} />
-                    </div>
-                </div>
-                <div className='row'>
-                    <div className='col-xs-11 col-md-8 col-xl-6'>
-                        <h2>Following: ({following.length})</h2>
-                        <UsersList users={following} />
-                    </div>
-                </div>
-                <div className='row'>
-                    <div className='col-xs-11 col-md-8 col-xl-6'>
-                        <h2>Repositories: ({repos.length})</h2>
-                        <ReposList repos={repos} />
-                    </div>
-                </div>
+                {content}
             </div>
             <style jsx>{`
                 .user-view {
                     margin-bottom: ${theme.space[4]}px;
-                }            
-                .user-payload-container {
-                    padding: 0 ${theme.space[2]}px;
-                }            
-                .user-payload {
-                    white-space: pre-wrap;
-                    word-wrap: break-all;
-                    text-align: justify;
                 }
             `}</style>
         </Layout>
@@ -83,7 +108,6 @@ const User = ({ userStore }) => {
 
 User.getInitialProps = async ({ store, isServer, query }) => {
     const { username } = query;
-    console.log('Is Server', isServer);
     if (username) {
         await store.dispatch(getUser({ username }));
     }
