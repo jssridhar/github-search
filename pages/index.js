@@ -120,7 +120,7 @@ class SearchPage extends Component {
                     }
                     .err-msg {
                         color: ${theme.colors.danger};
-                        font-size: ${theme.fontSizes[1]}px;
+                        font-size: ${theme.fontSizes[2]}px;
                     }
                     .search-view--pagination {
                         text-align: center;
