@@ -27,6 +27,8 @@ Redux thunk middleware is used for async actions. Thunk is included as part of r
 * `npm run dev` Runs a development server, with hot reloading support
 * `npm run prod` Creates a production bundle, runs a local server with the production bundle.
 
+> Note: Github api has rate limits (60 api calls per hour). To increase this limit during development, please use your use your github user account, [personal access token](https://github.com/settings/tokens). Add these to `api/github/index.js`
+
 ### Requirements
 * [x] There is a search bar to let the user search by username (login name)
 * [x] While searching, the application shows an animated loading indicator made by CSS (using gif image is not allowed)
