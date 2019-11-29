@@ -42,8 +42,6 @@ const ReposList = ({ repos }) => {
                 .repos-list {
                     margin: 0;
                     padding: 0;
-                    max-height: 400px;
-                    overflow: auto;
                     list-style: none;
                     padding: 0 ${theme.space[2]}px;
                     border-radius: 3px;

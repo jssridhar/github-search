@@ -1,8 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import App from 'next/app';
-import Head from 'next/head';
-import Link from 'next/link';
 import withRedux from 'next-redux-wrapper';
 import { initStore } from '../store';
 import theme from '../theme';
@@ -14,18 +12,6 @@ class GithubApp extends App {
 
         return (
             <>
-                <Head>
-                    <meta name='viewport' content='width=device-width, initial-scale=1' />
-                    <meta charSet='utf-8' />
-                    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css' />
-                    <script src='https://polyfill.io/v3/polyfill.min.js?features=Array.from,Promise,Symbol,Object.setPrototypeOf,Object.getOwnPropertySymbols'></script>
-                </Head>
-                <header className='page-header'>
-                    <Link href='/'>
-                        <img src='/images/Github-Mark-Light-32px.png' className='page-logo' />
-                    </Link>
-                    <h1 className='page-title'>Github user search</h1>
-                </header>
                 <Provider store={store}>
                     <Component {...pageProps} />
                 </Provider>

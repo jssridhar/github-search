@@ -6,7 +6,7 @@ const UserCard = ({ user }) => {
     return (
         <>
             <li className='user-card'>
-                <img src={user.avatar_url} className='user-card--avatar'/>
+                <img alt={user.login} src={user.avatar_url} className='user-card--avatar'/>
                 <Link href={`/user/[username]`} as={`/user/${user.login}`}>
                     <span className='user-card--name'>{user.login}</span>
                 </Link>
@@ -33,14 +33,14 @@ const UserCard = ({ user }) => {
     );
 };
 
-const UsersList = ({ users }) => {
+const UsersList = ({ users, className = '' }) => {
     if (users.length === 0) {
         return null;
     }
 
     return (
         <>
-            <ul className='users-list'>
+            <ul className={`users-list ${className}`}>
                 {users.map(user => {
                     return (
                         <UserCard key={user.id} user={user}/>
@@ -51,12 +51,14 @@ const UsersList = ({ users }) => {
                 .users-list {
                     margin: 0;
                     padding: 0;
-                    max-height: 70vh;
-                    overflow: auto;
                     list-style: none;
                     padding: 0 ${theme.space[2]}px;
                     border-radius: 3px;
                     border: 1px solid ${theme.colors.border.default};
+                }
+                .users-list.scroll-view {
+                    max-height: 70vh;
+                    overflow: auto;
                 }
             `}</style>
         </>

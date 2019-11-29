@@ -3,6 +3,7 @@ import Router, { withRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Layout from './layout';
 import Input from '../components/search-input';
 import Button from '../components/button';
 import PaginationButton from '../components/pagination-btn';
@@ -83,7 +84,7 @@ class SearchPage extends Component {
         const { searching, users, isLastPage, isFirstPage, error } = searchStore;
 
         return (
-            <>
+            <Layout>
                 <div className='container search-view'>
                     <div className='row search-view--input-container'>
                         <div className='col-xs-11 col-md-8 col-xl-6'>
@@ -99,7 +100,7 @@ class SearchPage extends Component {
                     </div>
                     <div className='row search-view--userlist-container'>
                         <div className='col-xs-11 col-md-8 col-xl-6'>
-                            {searching ? <Loader/> : <UsersList users={users} />}
+                            {searching ? <Loader/> : <UsersList users={users} className='scroll-view'/>}
                         </div>
                     </div>
                     {error ? (
@@ -127,7 +128,7 @@ class SearchPage extends Component {
                         margin-top: ${theme.space[2]}px;
                     }
                 `}</style>
-            </>
+            </Layout>
         );
     }
 }

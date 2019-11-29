@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Layout from '../layout';
 import UsersList from '../../components/user-list';
 import ReposList from '../../components/repos-list';
 import Loader from '../../components/loader';
@@ -34,10 +35,10 @@ const User = ({ userStore }) => {
     }
 
     return (
-        <>
+        <Layout title={user.login ? `github user - ${user.login}` : undefined}>
             <div className='container user-view'>
                 <div className='row'>
-                    <div className='col-xs-11 col-md-8 col-xl-6'>
+                    <div className='col-xs-11'>
                         <h2>User payload:</h2>
                         <code className='user-payload'>{JSON.stringify(user, null, "\t")}</code>
                     </div>
@@ -64,14 +65,14 @@ const User = ({ userStore }) => {
             <style jsx>{`
                 .user-payload {
                     white-space: pre-wrap;
-                    word-wrap: break-wrod;
+                    word-wrap: break-word;
                     text-align: justify;
                 }
                 .user-view {
                     margin-bottom: ${theme.space[4]}px;
                 }
             `}</style>
-        </>
+        </Layout>
     );
 }
 
