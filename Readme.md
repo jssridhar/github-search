@@ -2,6 +2,13 @@
 Node version: v8.11.3
 Yarn version: 1.17.3
 
+### Deployment
+
+Deployed it using [now](https://github.com/zeit/now).
+
+Current production version can be accessed [here](https://githubsearch.jssridhar.now.sh/)
+
+
 ## Libraries Used
 * [Next.js](https://nextjs.org/) - React framework to build server-rendered applications.
     * Faster initial load
@@ -19,26 +26,6 @@ Redux thunk middleware is used for async actions. Thunk is included as part of r
 
 * `npm run dev` Runs a development server, with hot reloading support
 * `npm run prod` Creates a production bundle, runs a local server with the production bundle.
-
-
-### Folders
-* `api` - All API requests
-* `components` - React components with self contained styling
-* `pages` - Pages/Views corresponding to routes. Routes are auto mapped to pages based on folder structure
-* `public` - Static assets (images etc)
-* `reducers` - Root reducer (Any non slice reducers should be created here)
-* `slices` - Module level reducers. Lesser boilerplate based on redux toolkit.
-* `store` - Redux store creator
-* `theme` - Theme folder with styling variables.
-
-
-The application has two pages
-* index - Search page with an input box to search for github users by login name. Results are shown below 
-* user/[username] - User view with parsed json payload, followers, following and repositories
-
-
-
-
 
 ### Requirements
 * [x] There is a search bar to let the user search by username (login name)
@@ -64,3 +51,19 @@ After the search is completed, the application shows the list of users along wit
 * [ ] The search input does the searching as you type (See google search as an example)
 * [ ] There is animated transition between pages
 * [x] The application supports theming and can easily be switched between themes
+
+
+### Folders
+* `api` - All API requests
+* `components` - React components with self contained styling
+* `pages` - Pages/Views corresponding to routes. Routes are auto mapped to pages based on folder structure
+* `public` - Static assets (images etc)
+* `reducers` - Root reducer (Any non slice reducers should be created here)
+* `slices` - Module level reducers. Lesser boilerplate based on redux toolkit.
+* `store` - Redux store creator
+* `theme` - Theme folder with styling variables.
+
+
+The application has two pages
+* index - Search page with an input box to search for github users by login name. Results are shown below 
+* user/[username] - User view with parsed json payload, followers, following and repositories

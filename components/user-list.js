@@ -57,7 +57,7 @@ const UsersList = ({ users, className = '' }) => {
                     border: 1px solid ${theme.colors.border.default};
                 }
                 .users-list.scroll-view {
-                    max-height: 70vh;
+                    max-height: 65vh;
                     overflow: auto;
                 }
             `}</style>
